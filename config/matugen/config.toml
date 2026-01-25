@@ -1,0 +1,5 @@
+[config]
+
+[templates.starship]
+input_path = '/home/veha/.config/matugen/template/starship.toml'
+output_path = '/home/veha/.config/starship.toml'

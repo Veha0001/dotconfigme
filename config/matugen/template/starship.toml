@@ -1,0 +1,346 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+# Pipes ╰─ ╭─
+# Powerline symbols                                     
+# Wedges 🭧🭒 🭣🭧🭓
+# Random noise 🬖🬥🬔🬗
+# Cool stuff 󰜥   
+
+add_newline = true
+command_timeout = 8000
+scan_timeout = 6000
+
+#fomart = """
+#[ ](fg:bg_2)\
+#[ ](bg:bg_1)\
+#$os\
+#$directory\
+#$git_branch\
+#$git_status\
+#[ ](fg:bg_2)\
+#$line_break\
+#[ ](fg:bg_2)\
+#[ ](bg:bg_1)\
+#$character\
+#$shell\
+#[ ](fg:bg_1)
+#"""
+
+
+format = """
+[ ](fg:bg_2)\
+[ ](bg:bg_1)\
+$directory\
+$shell\
+[](fg:bg_1 bg:bg_2)\
+[ ](fg:bg_2)
+"""
+
+right_format = """
+[ ](fg:bg_2)\
+[ ](bg:bg_1)\
+$os\
+[ ](bg:bg_1)\
+$character\
+$git_branch\
+$git_status\
+[ ](fg:bg_2)
+"""
+
+palette = "matugen"
+#palette = "backshot"
+
+[shell]
+disabled = false
+bash_indicator = ' '
+fish_indicator = '󰈺 '             #🐟
+zsh_indicator = "󰰶 "
+powershell_indicator = ' '       # 
+cmd_indicator = ' '              #
+ion_indicator = ' '
+elvish_indicator = "󰘧"
+tcsh_indicator = "󰰤 "
+nu_indicator = "nu"
+xonsh_indicator = "🐚"             # seashell emoji
+unknown_indicator = ' '
+style = "bold fg:fg_1 bg:bg_1"
+format = "[ $indicator ]($style)" #space on right b/c double-width symbol
+
+[git_branch]
+symbol = " "
+style = "bold fg:fg_1 bg:bg_1"
+format = '[[ $symbol $branch ](fg:fg_1 bg:bg_1)]($style)'
+
+[git_status]
+style = "fg:fg_1 bg:bg_1"
+format = '[[($all_status$ahead_behind )](fg:fg_1 bg:bg_1)]($style)'
+
+[directory]
+disabled = false
+style = "bold fg:fg_2 bg:bg_1"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = " 󰮺 "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"Templates" = " "
+"Steam" = " "
+"Github" = " "
+".config" = " "
+
+[palettes.matugen]
+bg_0 = "{{colors.surface.default.hex}}"
+fg_0 = "{{colors.on_surface.default.hex}}"
+# Text
+fg_4 = "{{colors.error_container.default.hex}}"
+fg_3 = "{{colors.on_tertiary.default.hex}}"
+fg_2 = "{{colors.on_primary.default.hex}}"
+fg_1 = "{{colors.on_primary_fixed.default.hex}}"
+fg_o = "{{colors.primary_container.default.hex}}"
+# Background
+bg_2 = "{{colors.on_primary_fixed_variant.default.hex}}"
+bg_1 = "{{colors.primary.default.hex}}"
+
+
+[palettes.backshot]
+bg_0 = "#000000"
+fg_0 = "#000000"
+fg_o = "#CAF0F8"
+bg_1 = "#0D41E1"
+fg_1 = "#ffffff"
+bg_2 = "#0C63E7"
+fg_2 = "#E85C90"
+
+fg_3 = "#109648"
+fg_4 = "#980123"
+
+[line_break]
+disabled = true
+
+[os]
+format = "[$symbol]($style)"
+style = "bold fg:fg_o bg:bg_1"
+disabled = false
+
+[os.symbols]
+
+AIX = "➿ "
+Alpaquita = " "   #alpaca
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "     #
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+#GhostBSD = "󰊠 "
+HardenedBSD = "󰞌 "
+Illumos = " "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "             #🌿
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = " "          #󰈺
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = " "
+OracleLinux = " "      #󰌷 ⊂⊃
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+RockyLinux = " "
+Solus = "󰠳 "            #
+SUSE = " "
+Ubuntu = " "
+Ultramarine = "󰼮 "
+Unknown = " "
+Void = " "
+Windows = " "          #
+
+
+[character]
+success_symbol = "[ ](fg:fg_2 bg:bg_1)" #✅
+error_symbol = "[ ](fg:fg_4 bg:bg_1)"   #⛔
+format = "[$symbol](bg:bg_1)"
+# No runtime need
+
+[bun]
+format = "via [$symbol]($style)"
+
+[buf]
+format = "with [$symbol]($style)"
+
+[c]
+format = "via [$symbol($name)]($style)"
+
+[cmake]
+format = "via [$symbol]($style)"
+
+[cobol]
+format = "via [$symbol]($style)"
+
+[cpp]
+format = "via [$symbol($name)]($style)"
+
+[crystal]
+format = "via [$symbol]($style)"
+
+[daml]
+format = "via [$symbol]($style)"
+
+[dart]
+format = "via [$symbol]($style)"
+
+[deno]
+format = "via [$symbol]($style)"
+
+[dotnet]
+format = "[$symbol(🎯 $tfm )]($style)"
+
+[elixir]
+format = 'via [$symbol]($style)'
+
+[elm]
+format = 'via [$symbol]($style)'
+
+[erlang]
+format = 'via [$symbol]($style)'
+
+[fennel]
+format = 'via [$symbol]($style)'
+
+[fortran]
+format = 'via [$symbol]($style)'
+
+[gleam]
+format = 'via [$symbol]($style)'
+
+[golang]
+format = 'via [$symbol]($style)'
+
+[gradle]
+format = 'via [$symbol]($style)'
+
+[haskell]
+format = 'via [$symbol]($style)'
+
+[haxe]
+format = 'via [$symbol]($style)'
+
+[helm]
+format = 'via [$symbol]($style)'
+
+[java]
+format = 'via [$symbol]($style)'
+
+[julia]
+format = 'via [$symbol]($style)'
+
+[kotlin]
+format = 'via [$symbol]($style)'
+
+[lua]
+format = 'via [$symbol]($style)'
+
+[meson]
+format = 'via [$symbol]($style)'
+
+[mojo]
+format = 'with [$symbol]($style)'
+
+[nim]
+format = 'via [$symbol]($style)'
+
+[nodejs]
+format = 'via [$symbol]($style)'
+
+[ocaml]
+format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
+
+[odin]
+format = 'via [$symbol]($style)'
+
+[opa]
+format = 'via [$symbol]($style)'
+
+[perl]
+format = 'via [$symbol]($style)'
+
+[php]
+format = 'via [$symbol]($style)'
+
+[pixi]
+format = 'via [$symbol($environment )]($style)'
+
+[pulumi]
+format = 'via [$symbol$stack]($style)'
+
+[purescript]
+format = 'via [$symbol]($style)'
+
+[python]
+format = 'via [$symbol]($style)'
+
+[quarto]
+format = 'via [$symbol]($style)'
+
+[raku]
+format = 'via [$symbol]($style)'
+
+[red]
+format = 'via [$symbol]($style)'
+
+[rlang]
+format = 'via [$symbol]($style)'
+
+[ruby]
+format = 'via [$symbol]($style)'
+
+[rust]
+format = 'via [$symbol]($style)'
+
+[scala]
+format = 'via [$symbol]($style)'
+
+[solidity]
+format = 'via [$symbol]($style)'
+
+[swift]
+format = 'via [$symbol]($style)'
+
+[typst]
+format = 'via [$symbol]($style)'
+
+[vagrant]
+format = 'via [$symbol]($style)'
+
+[vlang]
+format = 'via [$symbol]($style)'
+
+[xmake]
+format = "via [$symbol]($style)"
+
+[zig]
+format = 'via [$symbol]($style)'
