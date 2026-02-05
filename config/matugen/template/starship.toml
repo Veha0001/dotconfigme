@@ -27,7 +27,7 @@ scan_timeout = 6000
 
 
 format = """
-[ ](fg:bg_2)\
+[ ](fg:bg_1)\
 [ ](bg:bg_1)\
 $directory\
 $shell\
@@ -36,14 +36,13 @@ $shell\
 """
 
 right_format = """
-[ ](fg:bg_2)\
-[ ](bg:bg_1)\
+[ ](fg:bg_1)\
 $os\
 [ ](bg:bg_1)\
 $character\
 $git_branch\
 $git_status\
-[ ](fg:bg_2)
+[ ](fg:bg_1)
 """
 
 palette = "matugen"
@@ -182,6 +181,6 @@ Windows = " "          #
 
 [character]
 success_symbol = "[ ](fg:fg_2 bg:bg_1)" #✅
-error_symbol = "[ ](fg:fg_4 bg:bg_1)"   #⛔
+error_symbol = "[󰋔 ](fg:fg_4 bg:bg_1)"   #⛔
 format = "[$symbol ](bg:bg_1)"
 
