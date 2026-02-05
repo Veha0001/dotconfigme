@@ -28,7 +28,6 @@ scan_timeout = 6000
 
 format = """
 [ ](fg:bg_1)\
-[ ](bg:bg_1)\
 $directory\
 $shell\
 [](fg:bg_1 bg:bg_2)\
@@ -62,7 +61,7 @@ nu_indicator = "nu"
 xonsh_indicator = "🐚"             # seashell emoji
 unknown_indicator = ' '
 style = "bold fg:fg_1 bg:bg_1"
-format = "[ $indicator ]($style)" #space on right b/c double-width symbol
+format = "[$indicator]($style)" #space on right b/c double-width symbol
 
 [git_branch]
 symbol = " "
